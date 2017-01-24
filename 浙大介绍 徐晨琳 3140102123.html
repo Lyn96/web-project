@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DdYYYUGYxDdLBb8He1BIx18qEno6VUl6"></script>
+	<title>Welcome to Zhejiang University</title>
+</head>
+<body>
+	<h1><h1 align="center">Welcome to Zhejiang University</h1>
+	<p><p align="center"> This is a geographical introduction of ZJU, Zijingang Campus. Feel free to pin markers on the map. </p>
+	<div id="allmap" style="width:90%; height: 480px;margin:0px auto" ></div>
+</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(120.093728,30.308823);
+	var outline = [new BMap.Point(120.087004,30.31614),new BMap.Point(120.089448,30.301517),
+    				new BMap.Point(120.090993,30.3008),new BMap.Point(120.099006,30.301236),
+    				new BMap.Point(120.098718,30.311214),new BMap.Point(120.097892,30.315844),
+					new BMap.Point(120.094685,30.31494), new BMap.Point(120.094532,30.316865)];
+	var polygon = new BMap.Polygon(outline);
+	polygon.setFillColor("");
+	map.addOverlay(polygon);
+	map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());
+	map.centerAndZoom(point, 16);
+	map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+
+	var point1 = new BMap.Point(120.094997,30.30979);
+	var marker1 = new BMap.Marker(point1);
+	map.addOverlay(marker1);
+	var sContent1 =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>管理学院</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='http://www.som.zju.edu.cn/d/file/85b96a5cedcb9e04e0955ea2690bd9c8.jpg' width='139' height='104' title='管理学院'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px'>高贵（tǔ háo）的管院</p>" + 
+	"</div>";
+	var infoWindow1 = new BMap.InfoWindow(sContent1);
+	marker1.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow1);
+	   document.getElementById('imgDemo').onload = function (){ infoWindow1.redraw(); }
+	});
+
+	var marker2 = new BMap.Marker(new BMap.Point(120.089408,30.315401)); 
+	map.addOverlay(marker2); 
+	var sContent2 =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>蓝田学园</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='http://bksy.zju.edu.cn/wescms/sys/filebrowser/file.php?cmd=download&id=708946' width='110' height='104' title='蓝田学园'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px'>大量工科汉子的聚集区</p>" + 
+	"</div>";            
+	var infoWindow2 = new BMap.InfoWindow(sContent2);
+	marker2.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow2);
+	   document.getElementById('imgDemo').onload = function (){ infoWindow2.redraw(); }
+	});
+
+	var marker3 = new BMap.Marker(new BMap.Point(120.091231,30.315132)); 
+	map.addOverlay(marker3); 
+	var sContent3 =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>丹青学园</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='http://bksy.zju.edu.cn/wescms/sys/filebrowser/file.php?cmd=download&id=1008908' width='120' height='104' title='丹青学园'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px'>社科、外院妹子常驻地</p>" + 
+	"</div>";            
+	var infoWindow3 = new BMap.InfoWindow(sContent3);
+	marker3.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow3);
+	   document.getElementById('imgDemo').onload = function (){ infoWindow3.redraw(); }
+	});
+
+	var marker4 = new BMap.Marker(new BMap.Point(120.093651,30.307676)); 
+	map.addOverlay(marker4); 
+	var sContent4 =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>启真湖</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='http://img1.ph.126.net/IJEJfaRVVDnem65gcp_OUw==/6598277030425735645.jpg' width='120' height='100' title='黑天鹅'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px'>据可靠情报，有黑天鹅神兽出没 </p>" + 
+	"</div>";            
+	var infoWindow4 = new BMap.InfoWindow(sContent4);
+	marker4.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow4);
+	   document.getElementById('imgDemo').onload = function (){ infoWindow4.redraw(); }
+	});
+
+	var marker5 = new BMap.Marker(new BMap.Point(120.089052,30.311097)); 
+	map.addOverlay(marker5); 
+	var sContent5 =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>田径场</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='http://img5.imgtn.bdimg.com/it/u=1724006542,4022497931&fm=23&gp=0.jpg'width='120' height='104' title='黑天鹅'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px'>阳光，汗水与荷尔蒙</p>" + 
+	"</div>";            
+	var infoWindow5 = new BMap.InfoWindow(sContent5);
+	marker5.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow5);
+	   document.getElementById('imgDemo').onload = function (){ infoWindow5.redraw(); }
+	});
+
+	var marker6 = new BMap.Marker(new BMap.Point(120.09547,30.310089)); 
+	map.addOverlay(marker6); 
+	var sContent6 =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>图书馆</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='http://img3.imgtn.bdimg.com/it/u=3866902719,4189027445&fm=23&gp=0.jpg'width='120' height='94' title='图书馆'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px'>冬暖夏凉，自习的好去处</p>" + 
+	"</div>";            
+	var infoWindow6 = new BMap.InfoWindow(sContent6);
+	marker6.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow6);
+	   document.getElementById('imgDemo').onload = function (){ infoWindow6.redraw(); }
+	});
+
+	var marker7 = new BMap.Marker(new BMap.Point(120.092552,30.304243)); 
+	map.addOverlay(marker7); 
+	var sContent7 =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>南华园</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='http://img116.ph.126.net/nDznCq5mfEbju8hK6ODV7Q==/711287266149520043.jpg'width='120' height='94' title='南华园'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px'>┗|｀O′|┛夜访有惊喜~</p>" + 
+	"</div>";            
+	var infoWindow7 = new BMap.InfoWindow(sContent7);
+	marker7.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow7);
+	   document.getElementById('imgDemo').onload = function (){ infoWindow7.redraw(); }
+	});
+
+
+	
+</script>
